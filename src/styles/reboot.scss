@@ -1,0 +1,15 @@
+*, *::before, *::after {font-family: "Inter", sans-serif; box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 100%; line-height: 1.5; -webkit-text-size-adjust: 100%; -moz-text-size-adjust: 100%; }
+img, picture, video, canvas, svg { display: block; max-width: 100%; height: auto; }
+a { text-decoration: none; color: inherit; cursor: pointer; }
+ol, ul, menu { list-style: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+input, button, textarea, select { font: inherit; background: transparent; border: none; outline: none; }
+::placeholder { color: inherit; opacity: 0.5; }
+input[type="checkbox"], input[type="radio"] { all: unset; }
+button { background-color: transparent; border: none; padding: 0; cursor: pointer; }
+[hidden] { display: none; }
+pre { font-family: monospace; font-size: 1em; }
+dialog { all: revert; }
+body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+td, th { padding: 0; }

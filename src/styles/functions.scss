@@ -1,0 +1,5 @@
+@function to-hex($color) {
+    @if type-of($color) == "string" { $color: color($color); }
+    @return unquote('#{str-slice("0#{red($color)}", -2)}#{str-slice("0#{green($color)}", -2)}#{str-slice("0#{blue($color)}", -2)}');
+}
+  

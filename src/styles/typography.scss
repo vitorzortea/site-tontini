@@ -1,0 +1,13 @@
+// Tamanhos de texto
+$text-sizes: ( xs: 0.75rem, sm: 0.875rem, base: 1rem, lg: 1.125rem, xl: 1.25rem, 2xl: 1.5rem, 3xl: 1.75rem, 4xl: 2rem, 5xl: 2.5rem, 6xl: 3rem, 7xl: 4rem, 8xl: 6rem );
+    @each $size, $value in $text-sizes { .text-#{$size} { font-size: $value; } 
+}
+
+// Line Height
+$line-height-options: (0:0, min:0.8, 1:1, 2:1.25, 3:1.5, 4:2);
+@each $size, $value in $line-height-options { .line-height-#{$size} { line-height: $value; } }
+
+
+// Text Align
+$text-align-types: (center, justify, left, right);
+@each $type in $text-align-types { .text-#{$type} { text-align: $type; } }

@@ -1,0 +1,25 @@
+<header [ngClass]="{'start': environment.scroll<100, 'scroll': environment.scroll>100}">
+    <div class="container py-2">
+        <div class="flex flew-wrap justify-between align-items-center">
+            <h1>
+                <img src="svg/logo/logo-fundo-azul.svg" alt="Tontinni" />
+                <img src="svg/logo/logo.svg" alt="Tontinni" />
+                <p>TONTINI - SOLUCIONES DIGITALES</p>
+            </h1>
+            <ul class="flex flew-wrap justify-end align-items-center gap-3">
+                <li>
+                    <a routerLink="/" routerLinkActive="active">Link 1</a>
+                </li>
+                <li>
+                    <a routerLink="/" routerLinkActive="active">Link 2</a>
+                </li>
+                <li>
+                    <a routerLink="/" routerLinkActive="active">Link 3</a>
+                </li>
+                <li class="ml-3">
+                    <a routerLink="/" routerLinkActive="active" class="destaque">Link 4</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>

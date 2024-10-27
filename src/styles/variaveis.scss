@@ -1,0 +1,88 @@
+@use 'sass:math';
+// Definindo as cores base, incluindo primary e secundários
+$colors: (
+    primary: #3c6ca1,
+    secondary-1: #71f3fc,
+    secondary-2: #ff76cf,
+    red: #F44336,
+    pink: #E91E63,
+    purple: #9C27B0,
+    deep-purple: #673AB7,
+    indigo: #3F51B5,
+    blue: #2196F3,
+    light-blue: #03A9F4,
+    cyan: #00BCD4,
+    teal: #009688,
+    green: #4CAF50,
+    light-green: #8BC34A,
+    lime: #CDDC39,
+    yellow: #FFEB3B,
+    amber: #FFC107,
+    orange: #FF9800,
+    deep-orange: #FF5722,
+    brown: #795548,
+    blue-grey: #607D8B,
+    grey: #9E9E9E
+);
+
+// Função para gerar as variações de light e dark de forma dinâmica usando loop
+@function generate-color-variations($color, $step: 10) {
+    $variations: ();
+
+    // Adicionando lighten
+    @for $i from 1 through 5 {
+        $lightened-color: lighten($color, $step * $i);
+        $variations: append($variations, ('lighten-' + $i, $lightened-color));
+    }
+
+    // Adicionando darken
+    @for $i from 1 through 4 {
+        $darkened-color: darken($color, $step * $i);
+        $variations: append($variations, ('darken-' + $i, $darkened-color));
+    }
+
+    // Adicionando accents (ajuste de matiz)
+    $accent-types: (30, 60, 90, 120);
+    @each $type in $accent-types {
+        $accented-color: adjust-hue($color, $type);
+        $variations: append($variations, ('accent-' + $type, $accented-color));
+    }
+
+    @return $variations;
+}
+
+// Função para gerar cores intermediárias
+@function generate-intermediates($color1, $color2, $steps) {
+    $intermediates: ();
+    @for $i from 1 through $steps {
+        $mix-percentage: math.div($i, ($steps + 1)) * 100%;
+        $new-color: mix($color1, $color2, $mix-percentage);
+        $intermediates: append($intermediates, $new-color);
+    }
+    @return $intermediates;
+}
+
+// Criando as variáveis de cores no :root de forma otimizada
+:root {
+    // Cores base
+    @each $name, $color in $colors {
+        --#{"#{$name}"}: #{$color}; // Nomes de cores como strings
+        @each $variation, $value in generate-color-variations($color) {
+          --#{"#{$name}"}-#{$variation}: #{$value};
+        }
+    }
+
+    // Aplicando cores intermediárias entre primary e secundárias
+    $intermediates-primary-secondary1: generate-intermediates(map-get($colors, 'primary'), map-get($colors, 'secondary-1'), 6);
+    $intermediates-primary-secondary2: generate-intermediates(map-get($colors, 'primary'), map-get($colors, 'secondary-2'), 6);
+
+    // Definindo as variáveis de cores intermediárias para primary e secondary-1
+    @for $i from 1 through length($intermediates-primary-secondary1) {
+        --primary-secondary-1-#{$i}: #{nth($intermediates-primary-secondary1, $i)};
+    }
+
+    // Definindo as variáveis de cores intermediárias para primary e secondary-2
+    @for $i from 1 through length($intermediates-primary-secondary2) {
+        --primary-secondary-2-#{$i}: #{nth($intermediates-primary-secondary2, $i)};
+    }
+}

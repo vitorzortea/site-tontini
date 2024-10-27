@@ -1,0 +1,106 @@
+@use 'sass:math';
+
+//Container
+.container{
+  margin: 0 auto;
+  width: calc(100% - 10px);
+  max-width: 1000px;
+}
+
+// Display
+$display-types: (none, block, inline, inline-block, flex, inline-flex);
+@each $type in $display-types { .#{$type} { display: $type; } }
+
+// Flex Direction
+$flex-directions: (row, row-reverse, column, column-reverse);
+@each $direction in $flex-directions { .flex-#{$direction} { flex-direction: $direction; } }
+
+// Flex Wrap
+$flex-wraps: (nowrap, wrap, wrap-reverse);
+@each $wrap in $flex-wraps { .flex-#{$wrap} { flex-wrap: $wrap; } }
+
+// Flex
+.flex-auto { flex: 1 1 auto; }
+.flex-initial { flex: 0 1 auto; }
+.flex-none { flex: 0 0 auto; }
+
+// Grid container
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -0.5rem;
+  margin-left: -0.5rem;
+  margin-top: -0.5rem;
+}
+
+// Grid without gutter (sem margens)
+.grid-nogutter {
+  margin-right: 0;
+  margin-left: 0;
+  margin-top: 0;
+}
+
+//Flex Grow
+@for $i from 0 through 1 { .flex-grow-#{$i} { flex-grow: $i; } }
+
+//Flex Shrink
+@for $i from 0 through 1 { .flex-shrink-#{$i} { flex-shrink: $i; } }
+
+// Gap
+@for $i from 0 through 8 {
+    .gap-#{$i} { gap: #{0.25rem * $i}; }
+    .row-gap-#{$i} { row-gap: #{0.25rem * $i}; }
+    .column-gap-#{$i} { column-gap: #{0.25rem * $i}; }
+}
+
+// Order
+@for $i from 0 through 2 { .order-#{$i} { order: $i; } }
+
+// Justify Content
+$justify-content-options: (start, end, center, between, around, evenly);
+@each $justify in $justify-content-options { .justify-#{$justify} { justify-content: space-#{$justify}; } }
+
+// Align Content
+$align-content-options: (start, end, center, baseline, stretch);
+@each $align in $align-content-options { .align-content-#{$align} { align-content: $align; } }
+// Align Items
+@each $align in $align-content-options { .align-items-#{$align} { align-items: $align; } }
+
+// Align Self
+$align-self-options: (auto, start, end, center, baseline, stretch);
+@each $align in $align-self-options { .align-self-#{$align} { align-self: $align; } }
+
+
+// Margin e Padding
+$spacing-sizes: (0: 0rem, 1: 0.25rem, 2: 0.5rem, 3: 1rem, 4: 1.5rem, 5: 2rem, 6: 3rem, 7: 4rem, 8: 5rem);
+@each $i, $value in $spacing-sizes {
+  .m-#{$i} { margin: $value; }
+  .mt-#{$i} { margin-top: $value; }         
+  .mr-#{$i} { margin-right: $value; }
+  .mb-#{$i} { margin-bottom: $value; }
+  .ml-#{$i} { margin-left: $value; }
+  .mx-#{$i} { margin-left: $value; margin-right: $value; }
+  .my-#{$i} { margin-top: $value; margin-bottom: $value; }
+
+  .p-#{$i} { padding: $value; }        
+  .pt-#{$i} { padding-top: $value; }   
+  .pr-#{$i} { padding-right: $value; } 
+  .pb-#{$i} { padding-bottom: $value; }
+  .pl-#{$i} { padding-left: $value; }  
+  .px-#{$i} { padding-left: $value; padding-right: $value; }
+  .py-#{$i} { padding-top: $value; padding-bottom: $value; }
+}
+
+// Sistema de colunas
+@for $i from 0 through 12 {
+  .col-#{$i} {
+    flex: 0 0 math.div(100%, 12) * $i;
+    max-width: math.div(100%, 12) * $i;
+  }
+}
+
+// Colunas com largura fixa
+.col-fixed { flex: 0 0 auto; } 
+
+// Colunas com offset
+@for $i from 0 through 12 { .col-offset-#{$i} { margin-left: math.div(100%, 12) * $i; } }
