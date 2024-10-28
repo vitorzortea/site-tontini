@@ -3,7 +3,7 @@
     <div id="hero-home" class="">
         <div class="container">
             <div class="flex flex-wrap align-items-center gap-2">
-                <div class="col-5"> 
+                <div class="col-5 slide-left"> 
                     <h2 class="mb-5 text-5xl line-height-1">Lleva tu idea al futuro y transfórmala en soluciones digitales</h2>
                     <p class="mb-4">Mejore su presencia en línea con sitios web modernos, sistemas de programación, comercio electrónico personalizado y sistemas de gestión. Todo creado a tu medida.</p>
                     <div class="flex gap-3">
@@ -11,7 +11,7 @@
                         <button>Solicitar una cotización</button>
                     </div>
                 </div>
-                <div class="col-6"> 
+                <div class="col-6 slide-right"> 
                     <img src="svg/ilustracao-hero.svg" alt="Ilustração" />
                 </div>
             </div>
@@ -22,24 +22,24 @@
             <div class="flex flex-wrap align-items-center">
                 <div class="col-auto flex gap-5">
                     <div class="col-auto flex flex-column gap-5">
-                        <div class="card p-4">
+                        <div class="card p-4 slide-up">
                             <div class="mb-2" style="background-color:#36AEB6; width:50px; height:50px; border-radius: 50px;"></div>
                             <strong  class="mb-2 text-2xl">Páginas Web</strong>
                             <p class="line-height-1 mt-2"> ⁠Webs personalizadas y optimizadas.</p>
                         </div>
-                        <div class="card p-4">
+                        <div class="card p-4 slide-up">
                             <div class="mb-2" style="background-color:#36AEB6; width:50px; height:50px; border-radius: 50px;"></div>
                             <strong  class="mb-2 text-2xl">Gestión y Agendamiento</strong>
                             <p class="line-height-1 mt-2">Agendamiento online eficiente.</p>
                         </div>
                     </div>
                     <div class="col-auto flex flex-column gap-5 mt-4">
-                        <div class="card p-4">
+                        <div class="card p-4 slide-up">
                             <div class="mb-2" style="background-color:#36AEB6; width:50px; height:50px; border-radius: 50px;"></div>
                             <strong  class="mb-2 text-2xl">Tiendas <br/>en Línea</strong>
                             <p class="line-height-1 mt-2">Tiendas online para tu negocio.</p>
                         </div>
-                        <div class="card p-4">
+                        <div class="card p-4 slide-up">
                             <div class="mb-2" style="background-color:#36AEB6; width:50px; height:50px; border-radius: 50px;"></div>
                             <strong  class="mb-2 text-2xl">Backoffice</strong>
                             <p class="line-height-1 mt-2">Gestión interna simplificada.</p>
@@ -59,17 +59,21 @@
     </div>
     <div id="condiferencial"  class="">
         <div class="container py-4">
-            <div class="flex flex-wrap align-items-center">
+            <div class="flex flex-wrap align-items-center fade-in">
                 <div class="col-6">
+                    <div class=" slide-down">
                     <button class="button-title mb-2">O</button>
-                    <h3 class="my-3 line-height-1">
-                        <span class="text-xl">Soluciones sin Límites,<br/></span>
-                        <span class="text-3xl">Acceso en todos los dispositivos</span>
-                    </h3>
-                    <p>
-                        Nuestras soluciones digitales están diseñadas para ofrecerte total flexibilidad y seguridad. Accede a tus sistemas desde cualquier dispositivo — ya sea ordenador, tablet o móvil — con la confianza de que tus datos y operaciones están protegidos por las mejores tecnologías de seguridad.
-                    </p>
-                    <button class="call-action mt-3">Ver nuestro portafolio</button>
+                        <h3 class="my-3 line-height-1">
+                            <span class="text-xl">Soluciones sin Límites,<br/></span>
+                            <span class="text-3xl">Acceso en todos los dispositivos</span>
+                        </h3>
+                    </div>
+                    <div class=" slide-up">
+                        <p>
+                            Nuestras soluciones digitales están diseñadas para ofrecerte total flexibilidad y seguridad. Accede a tus sistemas desde cualquier dispositivo — ya sea ordenador, tablet o móvil — con la confianza de que tus datos y operaciones están protegidos por las mejores tecnologías de seguridad.
+                        </p>
+                        <button class="call-action mt-3">Ver nuestro portafolio</button>
+                    </div>
                 </div>
                 <div class="col-6">
                     <div class="img-box-dark">
@@ -87,33 +91,35 @@
                         <img src="img/what-temporario.webp" alt="imgem ilustrativa de um site" />
                     </div>
                 </div>
-                <div class="col-6">
-                    <button class="button-title mb-2">O</button>
-                    <h3 class="mb-3 text-3xl line-height-1">
-                        <span class="text-xl">Después de la entrega, </span><br/>
-                        <span class="text-3xl">ofrecemos soporte y consultoría</span>
-                    </h3>
-                    <p>
-                        Al contratar nuestros servicios, no estarás solo. Ofrecemos 3 meses de consultoría y soporte gratuitos después de la entrega del producto, asegurando que sepas cómo utilizar todas las funcionalidades y aproveches al máximo nuestras soluciones digitales.
-                    </p>
-                    <button class="call-action mt-3">Contáctenos</button>
+                <div class="col-6">                    
+                    <div class=" slide-up">
+                        <button class="button-title mb-2">O</button>
+                        <h3 class="mb-3 text-3xl line-height-1">
+                            <span class="text-xl">Después de la entrega, </span><br/>
+                            <span class="text-3xl">ofrecemos soporte y consultoría</span>
+                        </h3>
+                    </div>
+                    <div class=" slide-down">
+                        <p>
+                            Al contratar nuestros servicios, no estarás solo. Ofrecemos 3 meses de consultoría y soporte gratuitos después de la entrega del producto, asegurando que sepas cómo utilizar todas las funcionalidades y aproveches al máximo nuestras soluciones digitales.
+                        </p>
+                        <button class="call-action mt-3">Contáctenos</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <!--
-        <div id="video-demo">
-            <div class="container pt-8 pb-0">
-                <video id="custom_video_play" controls="controls" poster="img/banner-video.webp">
-                    <track src="Vídeo Temporario" kind="subtitles" srclang="pt" label="Português">
-                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"><source src="mov_bbb.flv" type="video/flv"> Browser Not Supporting
-                </video>
-            </div>
+    <div id="video-demo">
+        <div class="container pt-8 pb-0">
+            <video id="custom_video_play" controls="controls" poster="img/banner-video.webp">
+                <track src="Vídeo Temporario" kind="subtitles" srclang="pt" label="Português">
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"><source src="mov_bbb.flv" type="video/flv"> Browser Not Supporting
+            </video>
         </div>
-        -->
+    </div>
     <div id="recursos">
         <div class="container py-8">
-            <h3 class="text-3xl text-center mb-3">
+            <h3 class="mb-3 text-3xl line-height-1 text-center">
                 <span class="text-xl">Funcionalidades Destacadas</span> <br/>
                 <span class="text-3xl">de Nuestras Soluciones</span>
             </h3>
@@ -121,7 +127,7 @@
                 Nuestras soluciones digitales están equipadas con todas las funcionalidades necesarias para que tu negocio funcione de manera eficiente y segura. Aquí algunas de las características clave que ofrecemos:
             </p>
             <div class="flex flex-wrap pt-4">
-                <div class="col-4 p-3 flex gap-2">
+                <div class="col-4 p-3 flex gap-2 slide-down">
                     <div>
                         <div style="background-color: #36AEB6; width: 60px; height: 60px; border-radius: 50%;"></div>
                     </div>
@@ -132,7 +138,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-4 p-3 flex gap-2">
+                <div class="col-4 p-3 flex gap-2 slide-down">
                     <div>
                         <div style="background-color: #36AEB6; width: 60px; height: 60px; border-radius: 50%;"></div>
                     </div>
@@ -143,7 +149,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-4 p-3 flex gap-2">  
+                <div class="col-4 p-3 flex gap-2 slide-down">  
                     <div>
                         <div style="background-color: #36AEB6; width: 60px; height: 60px; border-radius: 50%;"></div>
                     </div>
@@ -154,7 +160,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-4 p-3 flex gap-2">
+                <div class="col-4 p-3 flex gap-2 slide-down">
                     <div>
                         <div style="background-color: #36AEB6; width: 60px; height: 60px; border-radius: 50%;"></div>
                     </div>
@@ -165,7 +171,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-4 p-3 flex gap-2">
+                <div class="col-4 p-3 flex gap-2 slide-down">
                     <div>
                         <div style="background-color: #36AEB6; width: 60px; height: 60px; border-radius: 50%;"></div>
                     </div>
@@ -176,7 +182,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-4 p-3 flex gap-2">
+                <div class="col-4 p-3 flex gap-2 slide-down">
                     <div>
                         <div style="background-color: #36AEB6; width: 60px; height: 60px; border-radius: 50%;"></div>
                     </div>
@@ -201,7 +207,7 @@
                 Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et<br/>
                 dolor. consectetur adipiscing elit, sed do eiusmod tempor.
             </p>
-            <div id="demo-list-site" class="pt-4" 
+            <div id="demo-list-site" class="pt-4 fade-in" 
                 (mouseout)="siteUp(3)"
             >
                 <ng-container *ngFor="let site of sites; index as i">

@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { AnimationDirective } from '../../shared/directive/animation.directive';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, AnimationDirective],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

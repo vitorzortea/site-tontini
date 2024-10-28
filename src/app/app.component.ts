@@ -4,6 +4,8 @@ import { MenuComponent } from './shared/menu/menu.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { DOCUMENT } from '@angular/common';
 import { environment } from '../environments/environment';
+import { Subject } from 'rxjs';
+import { EnvironmentService } from './core/service/environment.service';
 
 @Component({
   selector: 'app-root',
@@ -14,13 +16,19 @@ import { environment } from '../environments/environment';
 })
 export class AppComponent implements OnInit {
   constructor(
+    private readonly environmentS:EnvironmentService,
     private readonly el:ElementRef<HTMLElement>,
     @Inject(DOCUMENT) private readonly document:Document,
   ){}
+  environment = new Subject<typeof environment>();
+  lastScroll = {...environment}.scroll
 
   ngOnInit(): void { this.onWindowScroll() }
   @HostListener('window:scroll', ['$event']) onWindowScroll() {
     environment.scroll = this.document.documentElement.scrollTop;
-    this.el.nativeElement.setAttribute('scroll', environment.scroll?.toString());
+    environment.tela = this.document.defaultView?.innerHeight ?? 1;
+    environment.direction = environment.scroll > this.lastScroll;
+    this.lastScroll = environment.scroll;
+    this.environmentS.setEnviroment();
   }
 }
